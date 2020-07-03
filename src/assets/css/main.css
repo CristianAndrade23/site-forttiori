@@ -1,0 +1,217 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+header{
+    padding: 30px 0;
+}
+
+ul{
+  padding: 5px;
+}
+
+ul li{
+    list-style: circle;
+    margin-left: 15px
+}
+
+.menu-icon{
+    cursor: pointer;
+}
+
+.s-30{
+    width: 100%;
+    height: 30px;
+}
+
+.s-60{
+    width: 100%;
+    height: 60px;
+}
+
+.rectangle-title{
+    width: 60px;
+    height: 8px;
+    background: #0076BA;
+    margin-bottom: 30px;
+}
+
+.rectangle-title-s{
+    width: 50px;
+    height: 8px;
+    background: #0076BA;
+    margin-bottom: 30px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+a.button-blue{
+    color: #ffffff;
+    background: #0076BA;
+    padding: 15px;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+a.button-blue:hover{
+    text-decoration: none;
+    background: #004d79;
+}
+
+.lang:hover{
+    cursor: pointer;
+}
+
+.lang-active{
+    font-weight: 700;
+}
+
+.anime{
+    opacity: 0;
+    transform: translate3d(0,100px,0);
+    transition: .5s;
+}
+
+.anime-start{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+
+.ilus{
+    max-height: 400px;
+}
+
+#banner{
+    padding: 60px 0;
+    font-size: 32px;
+}
+
+#banner h1{
+    color: #0076BA;
+    font-size: 48px;
+}
+
+#we-are{
+    background: #0076BA;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+#services{
+    padding: 30px 0;
+}
+
+#cases{
+    background: #f4f4f4;
+    padding: 60px 0;
+}
+
+.case{
+    color: #fff;
+    padding: 15px;
+    height: calc(100% - 30px) !important;
+    background-size: cover;
+}
+
+.case-alo{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-panvel.jpg');
+}
+
+.case-siemens{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-siemens.jpg');
+}
+
+.case-killing{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-killing.jpg');
+}
+
+.case-paf{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-paf.jpg');
+}
+
+.case-safe{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-safe.jpg');
+}
+
+.case-cerealiza{
+    background: linear-gradient(90deg, #000000 0%, rgba(52, 101, 232, 0.6) 102.46%), url('../img/case-cerealiza.jpg');
+}
+
+#skills{
+    padding: 60px 0;
+}
+
+#skills .card{
+    padding: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#together{
+    padding: 250px 0;
+    color: #fff;
+    background: url('../img/together.jpg') center no-repeat;
+    background-size: contain;
+    text-transform: uppercase;
+}
+
+#footer{
+    background: #434343;
+    color: #fff;
+    padding: 30px 0 0 0;
+}
+
+#footer a{
+    color: #fff;
+    font-weight: 700;
+}
+
+#socios h2{
+    font-size: 22px;
+}
+
+#plano-de-carreira h3{
+    font-size: 22px;
+}
+
+.vaga-card{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.vaga-card .titulo-vaga{
+    background: #0084D0;
+    color: #fff;
+    padding: 8px 15px;
+}
+
+.vaga-card .titulo-vaga h3{
+    font-size: 22px;
+    margin: 0;
+}
+
+.vaga-card .conteudo-vaga{
+    padding: 15px;
+    border: 1px solid #eee;
+    background: #fff;
+}

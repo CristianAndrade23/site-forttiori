@@ -1,0 +1,27 @@
+<header>
+  <div class="container-fluid">
+    <div class="row align-middle">
+      <div class="col">
+        <img src="/assets/img/logo-forttiori.svg" alt="logo forttiori">
+      </div>
+      <div class="col text-right">
+
+        <span class="lang lang-active">PT</span> | <span class="lang">EN</span>
+
+        <label (click)="abreMenu()"><img src="/assets/img/menu-hamburger.svg" alt="menu" class="ml-3 align-middle menu-icon"></label>
+
+      </div>
+    </div>
+  </div>
+
+  <nav class="barra" *ngIf="statusMenu">
+    <br><br>
+    <li class="text-right" style="padding: 10px 15px; list-style: none;">
+      <label (click)="abreMenu()"><img src="/assets/img/menu-hamburger.svg" alt="menu" class="ml-3 align-middle menu-icon"></label>
+    </li>
+    <br>
+    <li class="menu-item" [routerLink]="['/']">HOME</li>
+    <li class="menu-item" [routerLink]="['/sobre']">SOBRE</li>
+    <li class="menu-item" [routerLink]="['/plano-carreira-vagas']">PLANO DE CARREIRA/VAGAS</li>
+  </nav>
+</header>
