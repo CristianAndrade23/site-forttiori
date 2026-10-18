@@ -12,6 +12,11 @@ body {
   font-size: 16px;
 }
 
+/* Margem lateral responsiva: 16px no celular, até 80px em telas largas. */
+.container-fluid {
+  padding-inline: clamp(16px, 5vw, 80px);
+}
+
 h1,
 h2,
 h3 {
