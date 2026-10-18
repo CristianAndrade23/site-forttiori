@@ -1,0 +1,89 @@
+<section id="contact" class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 align-self-center text-center">
+      <img src="assets/img/ilustracao-02.png" alt="" class="img-fluid ilus" />
+    </div>
+    <div class="col-md-4">
+      <h3>Do que você precisa?</h3>
+
+      @if (sent()) {
+        <div class="alert alert-success" role="status">
+          Obrigado pelo contato! Finalize o envio pelo seu aplicativo de e-mail.
+        </div>
+      }
+
+      <form [formRoot]="contactForm" aria-label="Formulário de contato">
+        @let nameState = contactForm.name();
+        <div class="mb-3">
+          <label for="contact-name" class="visually-hidden">Nome</label>
+          <input
+            id="contact-name"
+            type="text"
+            class="form-control"
+            placeholder="Nome"
+            autocomplete="name"
+            [formField]="contactForm.name"
+            [class.is-invalid]="nameState.touched() && nameState.invalid()"
+          />
+          @for (error of nameState.errors(); track error.kind) {
+            <div class="invalid-feedback">{{ error.message }}</div>
+          }
+        </div>
+
+        @let emailState = contactForm.email();
+        <div class="mb-3">
+          <label for="contact-email" class="visually-hidden">E-mail</label>
+          <input
+            id="contact-email"
+            type="email"
+            class="form-control"
+            placeholder="Email"
+            autocomplete="email"
+            [formField]="contactForm.email"
+            [class.is-invalid]="emailState.touched() && emailState.invalid()"
+          />
+          @for (error of emailState.errors(); track error.kind) {
+            <div class="invalid-feedback">{{ error.message }}</div>
+          }
+        </div>
+
+        @let subjectState = contactForm.subject();
+        <div class="mb-3">
+          <label for="contact-subject" class="visually-hidden">Assunto</label>
+          <select
+            id="contact-subject"
+            class="form-select"
+            [formField]="contactForm.subject"
+            [class.is-invalid]="subjectState.touched() && subjectState.invalid()"
+          >
+            <option value="" disabled>Assunto</option>
+            @for (subject of subjects; track subject) {
+              <option [value]="subject">{{ subject }}</option>
+            }
+          </select>
+          @for (error of subjectState.errors(); track error.kind) {
+            <div class="invalid-feedback">{{ error.message }}</div>
+          }
+        </div>
+
+        @let messageState = contactForm.message();
+        <div class="mb-3">
+          <label for="contact-message" class="visually-hidden">Mensagem</label>
+          <textarea
+            id="contact-message"
+            rows="3"
+            class="form-control"
+            placeholder="Mensagem"
+            [formField]="contactForm.message"
+            [class.is-invalid]="messageState.touched() && messageState.invalid()"
+          ></textarea>
+          @for (error of messageState.errors(); track error.kind) {
+            <div class="invalid-feedback">{{ error.message }}</div>
+          }
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>

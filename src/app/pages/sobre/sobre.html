@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <img src="assets/img/galera.jpg" alt="Equipe da Forttiori IT" class="img-fluid" />
+    </div>
+  </div>
+  <div class="s-60"></div>
+  <div class="row justify-content-center" appRevealOnScroll>
+    <div class="col-md-4">
+      <app-section-title>Lorem ipsum dolor</app-section-title>
+      <div class="s-30"></div>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+  <div class="s-60"></div>
+  <div id="socios" class="row justify-content-center g-4">
+    @for (partner of partners; track partner.name) {
+      <article class="col-md-3" appRevealOnScroll>
+        <div class="row">
+          <div class="col-sm-8">
+            <img [src]="partner.photo" [alt]="'Foto de ' + partner.name" class="img-fluid" />
+          </div>
+          <div class="col-sm-4 ps-sm-0">
+            <h2>{{ partner.name }}</h2>
+            <div class="rectangle-title-s"></div>
+            Sócio <br />
+            {{ partner.role }} <br />
+            <a [href]="partner.linkedin" [attr.aria-label]="'LinkedIn de ' + partner.name">
+              <img src="assets/img/linkedin.svg" alt="" width="20" />
+            </a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</div>
+
+<section id="instagram-fotos" appRevealOnScroll>
+  <app-section-title>Nossa cultura</app-section-title>
+  <div class="s-60"></div>
+  <!-- TODO: integrar com a API do Instagram, no formato desta imagem -->
+  <img src="assets/img/fotos-insta.jpg" alt="Fotos da cultura da Forttiori" class="img-fluid" />
+</section>
+
+<app-together-banner />
+
+<app-contact-section />

@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --ft-primary: #0076ba;
+  --ft-primary-dark: #004d79;
+  --ft-primary-light: #0084d0;
+  --ft-gray-dark: #434343;
+  --ft-gray-light: #f4f4f4;
+  --ft-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+ul {
+  padding: 5px;
+}
+
+ul li {
+  list-style: circle;
+  margin-left: 15px;
+}
+
+.s-30 {
+  width: 100%;
+  height: 30px;
+}
+
+.s-60 {
+  width: 100%;
+  height: 60px;
+}
+
+.rectangle-title,
+.rectangle-title-s {
+  width: 60px;
+  height: 8px;
+  background: var(--ft-primary);
+  margin-bottom: 30px;
+}
+
+.rectangle-title-s {
+  width: 50px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a.button-blue {
+  display: inline-block;
+  color: #fff;
+  background: var(--ft-primary);
+  padding: 15px;
+  transition: background 0.3s;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+a.button-blue:hover,
+a.button-blue:focus-visible {
+  background: var(--ft-primary-dark);
+}
+
+.ilus {
+  max-height: 400px;
+}
+
+/* Animação de entrada controlada pela diretiva appRevealOnScroll */
+.anime {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
+}
+
+.anime-start {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anime {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
