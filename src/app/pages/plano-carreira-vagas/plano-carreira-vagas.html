@@ -1,0 +1,75 @@
+<section id="plano-de-carreira" class="container-fluid">
+  <div class="s-60"></div>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <app-section-title>Plano de Carreira</app-section-title>
+      <div class="s-30"></div>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+  <div class="s-60"></div>
+  <div class="row">
+    <ol class="col-md-6 stages">
+      @for (stage of stages; track stage.title) {
+        <li class="row mb-4" appRevealOnScroll>
+          <div class="col-2 align-self-center">
+            <img [src]="stage.icon" alt="" class="img-fluid" />
+          </div>
+          <div class="col-8 align-self-center">
+            <h3>{{ stage.title }}</h3>
+            <p>
+              @for (step of stage.steps; track $index) {
+                {{ step }}<br />
+              }
+            </p>
+          </div>
+        </li>
+      }
+    </ol>
+    <div class="col-md-6 text-center align-self-center">
+      <img src="assets/img/ilustracao-03.png" alt="" class="img-fluid" />
+    </div>
+  </div>
+</section>
+
+<section id="vagas" class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <app-section-title>Vagas disponíveis</app-section-title>
+      <p class="text-center text-muted">{{ openingsLabel() }}</p>
+    </div>
+  </div>
+  <div class="s-30"></div>
+  <div class="row">
+    @for (opening of openings(); track opening.id) {
+      <div class="col-md-4">
+        <article class="vaga-card" appRevealOnScroll>
+          <div class="titulo-vaga">
+            <h3>{{ opening.title }}</h3>
+          </div>
+          <div class="conteudo-vaga">
+            <ul>
+              @for (skill of opening.skills; track $index) {
+                <li>{{ skill }}</li>
+              }
+            </ul>
+            <p class="text-center">
+              <a [href]="applyLink(opening)" class="button-blue">Candidatar-se</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    } @empty {
+      <p class="text-center">
+        No momento não há vagas abertas. Envie seu currículo pelo formulário abaixo!
+      </p>
+    }
+  </div>
+</section>
+
+<app-together-banner />
+
+<app-contact-section />

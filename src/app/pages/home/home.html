@@ -1,0 +1,127 @@
+<section id="banner" class="container-fluid">
+  <div class="row">
+    <div class="col-md align-self-center">
+      <h1>Lorem ipsum</h1>
+      <div class="rectangle-title"></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+      </p>
+      <div class="s-30"></div>
+      <a routerLink="/" fragment="contact" class="button-blue">Fale com a gente</a>
+    </div>
+    <div class="col-md text-center">
+      <img src="assets/img/ilustracao-01.png" alt="" class="img-fluid ilus" />
+    </div>
+  </div>
+</section>
+
+<section id="we-are" appRevealOnScroll>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-12">
+        <app-section-title [light]="true">Quem somos</app-section-title>
+        <div class="s-30"></div>
+        <p>
+          Forttiori IT has been operating in the digital market since 2003. Conceived from the
+          experiences of professionals from different IT sectors, Forttiori develop efficient and
+          innovative solutions in the digital market, enabling its clients to maximize the benefits
+          that technology brings in the business world.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="container-fluid" appRevealOnScroll>
+  <app-section-title>Serviços Inteligentes</app-section-title>
+  <div class="s-30"></div>
+  <div class="row justify-content-center">
+    @for (service of services; track service.title) {
+      <div class="col-md-3">
+        <p class="text-center"><img [src]="service.icon" alt="" class="img-fluid" /></p>
+        <h3 class="card-title">{{ service.title }}</h3>
+        <ul>
+          @for (item of service.items; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>
+
+<section id="cases">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-sm-12">
+        <app-section-title>Cases</app-section-title>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="s-30"></div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row h-100">
+          @for (item of featuredCases(); track item.title) {
+            <div class="col-md-6 mb-4">
+              <article class="case h-100" [style.background-image]="caseBackground(item.image)">
+                <h3 class="case-featured-title">{{ item.title }}</h3>
+                <div class="rectangle-title"></div>
+                <p>{{ item.description }}</p>
+              </article>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          @for (item of otherCases(); track item.title) {
+            <div class="col-md-6 mb-4">
+              <article class="case h-100" [style.background-image]="caseBackground(item.image)">
+                <h3>{{ item.title }}</h3>
+                <div class="rectangle-title"></div>
+                <p>{{ item.description }}</p>
+              </article>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="container-fluid" appRevealOnScroll>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <app-section-title>Equipe Multidisciplinar</app-section-title>
+      <p class="text-center">
+        Trabalhamos com tecnologias e metodologias modernas para entregarmos produtos de alta
+        qualidade e performance.
+      </p>
+    </div>
+  </div>
+  <div class="s-30"></div>
+  <div class="row justify-content-center g-3">
+    @for (skill of skills; track skill.title) {
+      <div class="col-6 col-md-2">
+        <div class="card h-100">
+          <p class="text-center"><img [src]="skill.icon" alt="" class="img-fluid" /></p>
+          <h3 class="card-title">{{ skill.title }}</h3>
+          <ul>
+            @for (item of skill.items; track $index) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<app-together-banner />
+
+<app-contact-section />

@@ -1,0 +1,14 @@
+#contact {
+  padding: 120px 0;
+}
+
+.btn-primary {
+  background: var(--ft-primary);
+  border-color: var(--ft-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--ft-primary-dark);
+  border-color: var(--ft-primary-dark);
+}

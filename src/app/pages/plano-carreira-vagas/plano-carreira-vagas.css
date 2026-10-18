@@ -1,0 +1,44 @@
+#plano-de-carreira {
+  padding-bottom: 120px;
+}
+
+#plano-de-carreira h3 {
+  font-size: 22px;
+}
+
+.stages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stages > li {
+  list-style: none;
+  margin-left: 0;
+}
+
+#vagas {
+  padding-bottom: 60px;
+}
+
+.vaga-card {
+  box-shadow: var(--ft-shadow);
+  margin-bottom: 30px;
+}
+
+.vaga-card .titulo-vaga {
+  background: var(--ft-primary-light);
+  color: #fff;
+  padding: 8px 15px;
+}
+
+.vaga-card .titulo-vaga h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.vaga-card .conteudo-vaga {
+  padding: 15px;
+  border: 1px solid #eee;
+  background: #fff;
+}

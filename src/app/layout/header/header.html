@@ -1,0 +1,63 @@
+<header>
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">
+        <a routerLink="/" aria-label="Forttiori IT, página inicial">
+          <img src="assets/img/logo-forttiori.svg" alt="Forttiori IT" />
+        </a>
+      </div>
+      <div class="col text-end">
+        @for (lang of languages; track lang; let last = $last) {
+          <button
+            type="button"
+            class="lang"
+            [class.lang-active]="language() === lang"
+            [attr.aria-pressed]="language() === lang"
+            (click)="selectLanguage(lang)"
+          >
+            {{ lang }}
+          </button>
+          @if (!last) {
+            <span aria-hidden="true">|</span>
+          }
+        }
+
+        <button
+          type="button"
+          class="menu-toggle ms-3"
+          aria-controls="main-menu"
+          [attr.aria-expanded]="menuOpen()"
+          aria-label="Abrir menu"
+          (click)="toggleMenu()"
+        >
+          <img src="assets/img/menu-hamburger.svg" alt="" class="menu-icon" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <nav id="main-menu" class="barra" aria-label="Menu principal">
+      <div class="text-end p-3">
+        <button type="button" class="menu-toggle" aria-label="Fechar menu" (click)="closeMenu()">
+          <img src="assets/img/menu-hamburger.svg" alt="" class="menu-icon" />
+        </button>
+      </div>
+      <ul>
+        @for (item of menuItems; track item.path) {
+          <li>
+            <a
+              class="menu-item"
+              [routerLink]="item.path"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  }
+</header>

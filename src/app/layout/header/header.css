@@ -1,0 +1,68 @@
+header {
+  padding: 30px 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang {
+  padding: 0 4px;
+}
+
+.lang-active {
+  font-weight: 700;
+}
+
+.menu-icon {
+  vertical-align: middle;
+}
+
+.barra {
+  z-index: 10;
+  background: var(--ft-primary);
+  min-height: 100vh;
+  width: 300px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-top: 30px;
+  box-shadow: var(--ft-shadow);
+  animation: slide-in 0.2s linear;
+}
+
+.barra ul {
+  padding: 0;
+  margin: 0;
+}
+
+.barra li {
+  list-style: none;
+  margin: 0;
+}
+
+.menu-item {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-item:hover,
+.menu-item:focus-visible,
+.menu-item.active {
+  background: #005c92;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+}

@@ -1,0 +1,35 @@
+<footer id="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <p><img src="assets/img/logo-forttiori-white.svg" alt="Forttiori IT" /></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </p>
+        <p>
+          @for (social of socialLinks; track social.name) {
+            <a [href]="social.url" target="_blank" rel="noopener noreferrer" class="me-2">
+              <img [src]="social.icon" [alt]="social.name + ' da Forttiori'" />
+            </a>
+          }
+        </p>
+      </div>
+      <div class="col-md-4">
+        <address>
+          <p>Av. Ceará 1309 - Porto Alegre - RS</p>
+          <p>
+            <a [href]="'mailto:' + contactEmail">{{ contactEmail }}</a>
+          </p>
+        </address>
+      </div>
+      <div class="col-md-4">
+        <a routerLink="/plano-carreira-vagas">Plano de carreira e vagas</a>
+      </div>
+    </div>
+    <hr />
+    <p class="text-center copyright">
+      {{ currentYear }} Forttiori.IT - Todos os direitos reservados
+    </p>
+  </div>
+</footer>
